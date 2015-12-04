@@ -13,3 +13,5 @@
 /vendor/bundle/*
 /cookbooks/
 /tmp/librarian/
+/config/database.yml
+
