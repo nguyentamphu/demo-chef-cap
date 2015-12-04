@@ -1,0 +1,12 @@
+{
+  "run_list": [
+    "role[base]",
+    "role[mysql]",
+    "role[nodejs]",
+    "role[redis]",
+    "role[rvm]"
+  ],
+  "automatic": {
+    "ipaddress": "127.0.0.54"
+  }
+}

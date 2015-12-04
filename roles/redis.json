@@ -1,0 +1,32 @@
+// {
+//   "name": "redis",
+//   "chef_type": "role",
+//   "json_class": "Chef::Role",
+//   "description": "Install Redis server",
+//   "default_attributes": {
+//   },
+//   "env_run_lists": {
+//     "development": [
+//       "recipe[redis]"
+//     ],
+//     "staging": [
+//       "recipe[redis]"
+//     ],
+//     "production": [
+//       "recipe[redis]"
+//     ]
+//   }
+// }
+
+
+
+{
+  "name": "redis",
+  "description": "Install redis environment",
+  "json_class": "Chef::Role",
+  "chef_type": "role",
+  "run_list": [
+    "recipe[redisio]",
+    "recipe[redisio::enable]"
+  ]
+}

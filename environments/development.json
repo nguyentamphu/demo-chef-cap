@@ -1,0 +1,14 @@
+{
+  "name": "development",
+  "description": "Install environment for development",
+  "json_class": "Chef::Environment",
+  "chef_type": "environment",
+  "default_attributes": {
+
+  },
+  "override_attributes": {
+    "app": {
+      "enable_nginx": true
+    },
+  }
+}

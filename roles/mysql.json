@@ -1,0 +1,16 @@
+
+{
+  "name": "mysql",
+  "description": "Install mysql environment",
+  "json_class": "Chef::Role",
+  "chef_type": "role",
+  "run_list": [
+    "recipe[mysql::server]",
+    "recipe[mysql::client]"
+  ],
+  "override_attributes": {
+    "mysql": {
+      "server_root_password": ""
+    }
+  }
+}

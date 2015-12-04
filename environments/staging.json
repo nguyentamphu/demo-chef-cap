@@ -1,0 +1,17 @@
+{
+  "name": "staging",
+  "description": "Install environment for staging",
+  "json_class": "Chef::Environment",
+  "chef_type": "environment",
+  "default_attributes": {
+  },
+  "override_attributes": {
+    "app": {
+      "path": "/home/ubuntu/hello",
+      "db": {
+        "name": "hello_staging"
+      },
+      "enable_nginx": true
+    }
+  }
+}
