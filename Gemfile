@@ -47,6 +47,7 @@ group :development do
   gem 'chef', '12.0.3'
   gem 'knife-solo'
   gem 'librarian-chef'
+  gem 'awesome_print'
 
 end
 

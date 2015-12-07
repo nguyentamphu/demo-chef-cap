@@ -4,7 +4,13 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    if params['select'].present? && params['select'] == 'true'
+      @users = User.all_users(true)
+      @status = 'locked'
+    else
+      @users = User.all_users(false)
+      @status = 'available'
+    end
   end
 
   # GET /users/1
@@ -54,7 +60,9 @@ class UsersController < ApplicationController
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
-    @user.destroy
+    # @user.destroy
+    # @user.only_deleted
+    @user.update!(is_deleted: true)
     respond_to do |format|
       format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
       format.json { head :no_content }
