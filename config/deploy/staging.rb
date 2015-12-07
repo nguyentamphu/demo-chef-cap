@@ -8,7 +8,8 @@
 # server 'db.example.com', user: 'deploy', roles: %w{db}
 
 user = "ubuntu"
-ip_address = "127.0.0.54"
+# ip_address = "127.0.0.54"
+ip_address = "172.16.20.210"
 
 # role-based syntax
 # ==================
@@ -74,6 +75,6 @@ set :bundle_flags, "--no-deployment"
 
 set :ssh_options, {
   keys: %w(~/.ssh/ubuntu-server),
-  forward_agent: true,
-  port: 2222
+  forward_agent: true
+  # port: 2222
 }
