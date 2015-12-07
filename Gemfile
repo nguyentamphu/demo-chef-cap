@@ -48,6 +48,8 @@ group :development do
   gem 'knife-solo'
   gem 'librarian-chef'
   gem 'awesome_print'
+  #For generator view with slim
+  gem 'slim-rails'
 
 end
 
