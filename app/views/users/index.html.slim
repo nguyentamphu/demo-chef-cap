@@ -1,0 +1,38 @@
+p#notice
+  = notice
+h1
+  | Listing Users
+= form_tag(users_path, { method: :get }) do
+  = select_tag :select, options_for_select({'Available' => false, 'Locked' => true}, params['select'])
+  = button_to 'Submit', users_path, method: :get
+- if @status == 'locked'
+  div
+    h2[style="color: red"]
+      | All users were locked
+- else
+  div
+    h2[style="color: green"]
+      | All users are available
+table
+  thead
+    tr
+      th
+        | Name
+      th
+        | Age
+      th[colspan="3"]
+  tbody
+    - @users.each do |user|
+      tr
+        td
+          = user.name
+        td
+          = user.age
+        td
+          = link_to 'Show', user
+        td
+          = link_to 'Edit', edit_user_path(user)
+        td
+          = link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }
+br
+= link_to 'New User', new_user_path
