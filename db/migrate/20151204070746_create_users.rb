@@ -3,6 +3,7 @@ class CreateUsers < ActiveRecord::Migration
     create_table :users do |t|
       t.string :name
       t.integer :age
+      t.boolean :is_deleted, default: false
 
       t.timestamps null: false
     end

@@ -1,6 +1,16 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Users</h1>
+<%= form_tag(users_path, { method: :get }) do %>
+  <%= select_tag :select, options_for_select({'Available' => false, 'Locked' => true}, params['select']) %>
+  <%= button_to 'Submit', users_path, method: :get %>
+<% end -%>
+
+<% if @status == 'locked' %>
+  <div><h2 style="color: red">All users locked</h2></div>
+<% else %>
+  <div><h2 style="color: green">All users available</h2></div>
+<% end -%>
 
 <table>
   <thead>
