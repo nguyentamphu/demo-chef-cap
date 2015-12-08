@@ -47,5 +47,15 @@ group :development do
   gem 'chef', '12.0.3'
   gem 'knife-solo'
   gem 'librarian-chef'
+  gem 'awesome_print'
+  #For generator view with slim
+  gem 'slim-rails'
 
 end
+
+gem 'unicorn'
+gem 'capistrano-rails'
+gem 'capistrano-bundler'
+gem 'capistrano-unicorn-nginx', '~> 3.2.0'
+gem 'capistrano-sidekiq', github: 'seuros/capistrano-sidekiq'
+gem 'capistrano-rvm'
